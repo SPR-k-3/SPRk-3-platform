@@ -26,3 +26,9 @@ htmlcov/
 dist/
 build/
 *.egg-info/
+
+# Project specific
+test_repos/
+test_face_rec/
+test_flask/
+sprk3_integrated.py
