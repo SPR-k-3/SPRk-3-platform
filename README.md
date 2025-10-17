@@ -1,3 +1,5 @@
+[![Tests](https://github.com/SPR-k-3/SPRk-3-platform-/actions/workflows/test.yml/badge.svg)](https://github.com/SPR-k-3/SPRk-3-platform-/actions)
+
 # SPR{K}3 Platform
 
 ## 🧬 Bio-Inspired Code Intelligence for Pattern Detection and ML Security
