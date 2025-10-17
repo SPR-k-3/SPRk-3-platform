@@ -21,7 +21,7 @@ jobs:
     
     - name: Run tests
       run: |
-        python tests/test_sprk3.py
+        python test_sprk3.py
     
     - name: Test on examples
       run: |
