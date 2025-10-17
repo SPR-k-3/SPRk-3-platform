@@ -1,4 +1,4 @@
-name: Test SPR{K}3
+name: SPR{K}3 Complete Test Suite
 
 on: [push, pull_request]
 
@@ -19,13 +19,31 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     
+    - name: Run unit tests
+      run: |
+        python test_sprk3.py
+    
     - name: Run SPR{K}3 on repository
       run: |
         python sprk3_engine.py .
     
-    - name: Test API startup
+    - name: Test API server
       run: |
         timeout 10 python -m uvicorn app:app --host 0.0.0.0 --port 8000 &
         sleep 5
         curl -f http://localhost:8000/ || exit 1
-        echo "✅ API server started successfully!"
+        curl -f http://localhost:8000/health || exit 1
+        curl -f http://localhost:8000/pricing || exit 1
+        echo "✅ All API endpoints work!"
+    
+    - name: Performance benchmark
+      run: |
+        echo "Running performance test..."
+        start_time=$(date +%s)
+        python sprk3_engine.py .
+        end_time=$(date +%s)
+        duration=$((end_time - start_time))
+        echo "✅ Scan completed in ${duration} seconds"
+        if [ $duration -gt 10 ]; then
+          echo "⚠️ Warning: Scan took more than 10 seconds"
+        fi
