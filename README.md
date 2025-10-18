@@ -45,7 +45,7 @@ Our dual-engine approach provides both architectural intelligence and security m
 
 ### 📜 License
 
-AGPL-3.0 + Patent Pending (U.S. Application filed 2024)
+AGPL-3.0 + Patent Pending (U.S. Application filed 2025)
 
 ---
 © 2025 Dan Aridor. Built with 🧬 bio-inspired intelligence.
