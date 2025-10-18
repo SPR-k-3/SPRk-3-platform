@@ -24,4 +24,4 @@ Service provided "as is" without warranties.
 ### 6. Data Privacy
 We process only code structure, not sensitive data.
 
-Contact: support@sprk3.tech
+Contact: support@sprk3.com
