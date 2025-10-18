@@ -1,47 +1,26 @@
-# SPR{K}3 Platform Pricing
+# Pricing
 
-## Intelligent Pricing for Real Usage
+## Current Status: Limited Evaluation
 
-### SPR{K}3 Core - Architecture Intelligence
-| Plan | Price/Month | Repositories | Scans/Month |
-|------|-------------|--------------|-------------|
-| Free | $0 | 1 repo | 3 scans |
-| Starter | $29 | 5 repos | 20 scans |
-| Professional | $99 | 15 repos | 100 scans |
-| Business | $299 | 50 repos | 500 scans |
-| Enterprise | Custom | Custom | Custom |
+SPR{K}3 is accepting the first 50 users for evaluation.
 
-*Extra scans: $2 each (or upgrade plan)*
+**Evaluation Offer**: 
+- **First 50 users**: 30-day free evaluation
+- **Spots remaining**: Check GitHub Stars count
+- **What's included**: Full core features
+- **Requirement**: Provide feedback
 
-### Sentinel Security - ML Protection  
-| Plan | Price/Month | Repositories | Checks/Day |
-|------|-------------|--------------|------------|
-| Starter | $49 | 5 repos | 100 checks |
-| Professional | $149 | 25 repos | 1,000 checks |
-| Business | $399 | 100 repos | 10,000 checks |
+## After Evaluation Period
 
-### 🎯 Bundle Discount
-**Core + Sentinel Starter**: $59/month (Save 25%)
-- 20 architecture scans
-- 100 security checks/day
-- Perfect for small teams
+### Starter: $99/month
+- 20 scans/month
+- 1 repository
 
-## Why These Limits?
+### Professional: $299/month  
+- 100 scans/month
+- 5 repositories
 
-### Realistic Usage Patterns:
-- Most teams scan **weekly or monthly** (4-20 scans/month)
-- Daily commits need security checks (100/day is plenty)
-- Limits prevent abuse while covering real needs
-- Extra scans available when needed
+### Enterprise: Custom
+- Contact: support@sprk3.com
 
-### Fair Pricing:
-- Pay for what you use
-- No "unlimited" abuse
-- Sustainable business model
-- Quality service guaranteed
-
-## Scan Recommendations:
-- **Architecture scans**: Weekly or before major releases
-- **Security checks**: On every PR and commit
-- **Full analysis**: Monthly or quarterly
-
+**Early Adopter Benefit**: First 50 users get 25% lifetime discount.
