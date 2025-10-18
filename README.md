@@ -1,4 +1,10 @@
+# SPR{K}3 Platform
+
 [![Tests](https://github.com/SPR-k-3/SPRk-3-platform-/actions/workflows/test.yml/badge.svg)](https://github.com/SPR-k-3/SPRk-3-platform-/actions)
+
+<p align="center">
+  <img src="assets/logo.png" alt="SPR{K}3 Logo" width="400">
+</p>
 
 # SPR{K}3 Platform
 
