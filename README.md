@@ -107,3 +107,9 @@ SPR{K}3 is currently undergoing evaluation by early adopters and security resear
 3. Share feedback: support@sprk3.com
 
 **Note**: This is active research technology. While core detection is stable, we're continuously improving based on real-world usage.
+
+## 💰 Pricing
+
+See [PRICING.md](PRICING.md) for current evaluation offer and pricing tiers.
+- First 50 users: 30-day free evaluation
+- Early adopter discount: 25% lifetime
