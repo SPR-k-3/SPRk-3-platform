@@ -91,3 +91,19 @@ Copyright (c) 2025 Dan Aridor
 - Commercial licenses available: support@sprk3.com
 
 Built with 🧬 bio-inspired intelligence
+## 🔬 Current Status: Under Evaluation
+
+SPR{K}3 is currently undergoing evaluation by early adopters and security researchers. We welcome feedback from the community as we refine the platform.
+
+### Evaluation Focus Areas:
+- Detection accuracy across different codebases
+- Performance on large-scale repositories
+- False positive rates
+- Auto-correction effectiveness
+
+### How to Participate:
+1. Clone and test on your codebase
+2. Report findings via Issues
+3. Share feedback: support@sprk3.com
+
+**Note**: This is active research technology. While core detection is stable, we're continuously improving based on real-world usage.
