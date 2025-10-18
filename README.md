@@ -81,7 +81,7 @@ While other tools tell you what's wrong, SPR{K}3 gives you production-ready solu
 Copyright (c) 2025 Dan Aridor
 
 - Open source under AGPL-3.0 License
-- Patent pending on detection methods (Filed October 10, 2025)
+- Patent pending 
 - Commercial licenses available: contact@sprk3.tech
 
 Built with 🧬 bio-inspired intelligence
