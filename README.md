@@ -19,12 +19,12 @@
 #### SPR{K}3 Core - Architectural Intelligence (Pay-per-scan)
 - ✅ Detects survivor patterns that shouldn't be refactored
 - ✅ Prevents breaking critical code dependencies
-- ✅ Pricing: $0.05-$0.50 per scan based on codebase size
+- ✅ See pricing below
 
 #### Sentinel Security - ML Protection (Subscription)
 - ✅ Detects poisoning attacks (250-sample threshold)
 - ✅ Real-time monitoring of ML pipelines
-- ✅ Pricing: $49-$499/month for continuous protection
+- ✅ See pricing below
 
 ### 🚀 Quick Start
 ```bash
@@ -45,10 +45,10 @@ Our dual-engine approach provides both architectural intelligence and security m
 
 ### 📜 License
 
-AGPL-3.0 + Patent Pending (U.S. Application filed October 8, 2025)
+AGPL-3.0 + Patent Pending (U.S. Application filed 2024)
 
 ---
-© 2025 SPR{K}3 Technologies. Built with 🧬 bio-inspired intelligence.
+© 2025 Dan Aridor. Built with 🧬 bio-inspired intelligence.
 
 ---
 
