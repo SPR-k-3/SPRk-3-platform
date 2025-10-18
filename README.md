@@ -82,6 +82,6 @@ Copyright (c) 2025 Dan Aridor
 
 - Open source under AGPL-3.0 License
 - Patent pending 
-- Commercial licenses available: contact@sprk3.tech
+- Commercial licenses available: support@sprk3.com
 
 Built with 🧬 bio-inspired intelligence
