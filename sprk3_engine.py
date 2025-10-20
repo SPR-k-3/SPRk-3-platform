@@ -29,6 +29,14 @@ from typing import Dict, List, Set, Tuple, Optional, Any
 from collections import defaultdict, Counter
 from dataclasses import dataclass, field
 
+# Import the 4th Engine - BrainGuard
+try:
+    from brainguard_engine import SPRk3BrainGuard, DataSample
+    BRAINGUARD_AVAILABLE = True
+except ImportError:
+    BRAINGUARD_AVAILABLE = False
+    print("Warning: BrainGuard engine not available. Running with 3 engines only.")
+
 # Critical research-based threshold
 POISONING_THRESHOLD = 250  # Samples needed for successful poisoning
 WARNING_THRESHOLD = 200    # 80% of poisoning threshold
@@ -59,7 +67,7 @@ class ThreatSignal:
     evidence: List[str] = field(default_factory=list)
 
 class StructuralPoisoningDetector:
-    """Main detector implementing the 3-engine architecture"""
+    """Main detector implementing the 4-engine architecture (3 original + BrainGuard)"""
     
     def __init__(self, verbose: bool = False):
         self.verbose = verbose
@@ -71,6 +79,16 @@ class StructuralPoisoningDetector:
             "threats_found": 0,
             "scan_time": None
         }
+        
+        # NEW: Initialize 4th Engine - BrainGuard
+        if BRAINGUARD_AVAILABLE:
+            self.brainguard = SPRk3BrainGuard()
+            self.engines_active = 4
+            if verbose:
+                print("✅ BrainGuard Engine 4 activated - Cognitive Health Monitoring enabled")
+        else:
+            self.brainguard = None
+            self.engines_active = 3
         
     def analyze(self, target_path: str) -> Dict[str, Any]:
         """Main analysis entry point"""
@@ -353,6 +371,51 @@ class StructuralPoisoningDetector:
                 )
                 self.threat_signals.append(threat)
                 self.scan_metadata["threats_found"] += 1
+    
+    def analyze_training_quality(self, data_samples: List[Dict]) -> Dict[str, Any]:
+        """
+        NEW: Engine 4 - Analyze training data quality for brain rot risk
+        
+        Args:
+            data_samples: List of training data samples with 'text' and optional 'metadata'
+            
+        Returns:
+            Quality assessment report with risk levels and recommendations
+        """
+        if not self.brainguard:
+            return {
+                "error": "BrainGuard engine not available",
+                "message": "Upgrade to Professional tier for cognitive health monitoring",
+                "detected_risk": True,
+                "upgrade_url": "/pricing"
+            }
+        
+        # Convert to BrainGuard format
+        samples = []
+        for sample in data_samples:
+            samples.append(DataSample(
+                text=sample.get('text', ''),
+                engagement_score=sample.get('engagement_score', 0.5),
+                source=sample.get('source', 'unknown')
+            ))
+        
+        # Run analysis
+        result = self.brainguard.evaluate_batch(samples)
+        
+        # Generate health report
+        health = self.brainguard.get_health_report()
+        
+        return {
+            "engine": "BrainGuard (Engine 4)",
+            "batch_quality": result.get('avg_quality', 0),
+            "junk_percentage": result.get('junk_percentage', 0),
+            "risk_zone": health.get('risk_zone', 'UNKNOWN'),
+            "cumulative_junk_ratio": result.get('cumulative_exposure', {}).get('cumulative_junk_ratio', 0),
+            "should_intervene": result.get('should_intervene', False),
+            "health_status": health.get('status', 'UNKNOWN'),
+            "expected_performance_drop": health.get('metrics', {}).get('expected_performance_drop', 0),
+            "recommendation": health.get('intervention', {}).get('recommended_action', 'Continue monitoring')
+        }
                 
     def _generate_report(self) -> Dict[str, Any]:
         """Generate comprehensive analysis report"""

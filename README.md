@@ -1,6 +1,6 @@
-# 🔬 SPR{K}3: Survival Pattern Recognition {Kinase} with 3 Engines
+# 🔬 SPR{K}3: Survival Pattern Recognition {Kinase} with 4 Engines
 
-**Bio-Inspired Architectural Intelligence + ML Security Platform**
+**Bio-Inspired Architectural Intelligence + ML Security Platform + Cognitive Health Monitor**
 
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL%203.0-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
@@ -55,7 +55,7 @@ Recommendation: Refactor to reduce coupling
 
 ---
 
-## 🏗️ The 3-Engine Architecture
+## 🏗️ The 4-Engine Architecture
 
 ### **ENGINE 1: Bio-Intelligence (Survival Analysis)**
 
@@ -98,6 +98,31 @@ Understands code architecture through dependency graphs:
 Structural Analysis:
 ├─ Co-change matrix: Which files change together?
 ├─ Blast radius: How many files affected by changes?
+├─ Architectural hubs: Files that everything depends on
+└─ Pattern clusters: Groups that evolve together
+```
+
+### **🆕 ENGINE 4: Cognitive Health Monitor (Brain Rot Prevention)**
+
+Prevents LLM cognitive degradation from low-quality training data:
+
+```python
+Quality Assessment:
+├─ Engagement scoring: Social signals predict quality
+├─ Thought-skip detection: Incomplete reasoning chains
+├─ Information density: Substance per token
+└─ Toxic pattern identification: Junk/spam detection
+
+Risk Zones:
+├─ 🟢 GREEN: 0-20% junk (healthy)
+├─ 🟡 YELLOW: 20-40% junk (caution)
+├─ 🟠 ORANGE: 40-60% junk (warning)
+└─ 🔴 RED: 60%+ junk (critical - 17.7% performance drop)
+
+Based on Research:
+  "Your LLM has Brain Rot" - preventing lasting cognitive decline
+  Key finding: 70% junk exposure = 17.7% reasoning degradation
+```
 ├─ Dependency graphs: Circular dependencies, layer violations
 └─ Architectural roles: API, Data, Security, Business layers
 
