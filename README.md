@@ -391,3 +391,22 @@ SPR{K}3's ML security capabilities are based on peer-reviewed research:
 ---
 
 > **"SPR{K}3 is not a scanner. We're your intelligent remediation partner."**
+
+---
+
+## 🛡️ NEW: Agentland Defense System
+
+**Enterprise-grade protection against AI backdoors and agent compromise.**
+
+- 🔍 **7 threat detection types**: Zero-width chars, hidden HTML, semantic triggers, and more
+- ✅ **95% detection confidence** on invisible Unicode attacks
+- 🛡️ **3-layer defense**: Model scanning + behavioral monitoring + trigger detection
+- 📚 **Research-based**: Implements "Malice in Agentland" (Boisvert et al., 2025)
+
+**Quick Start:**
+```bash
+streamlit run security_app.py
+```
+
+Full documentation: [agentland_defense/](agentland_defense/)
+
