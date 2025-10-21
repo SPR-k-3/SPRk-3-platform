@@ -24,6 +24,17 @@ class Colors:
     BOLD = '\033[1m'
     RESET = '\033[0m'
 
+
+# === AGENTLAND DEFENSE SECURITY ===
+try:
+    from sprk3_security import SPRk3Security
+    SECURITY_AVAILABLE = True
+except ImportError:
+    SECURITY_AVAILABLE = False
+    print("⚠️ Security module not available - running without threat detection")
+
+
+
 @dataclass
 class DataSample:
     """Represents a training data sample with metadata"""
@@ -576,3 +587,51 @@ def run_demo():
 
 if __name__ == "__main__":
     run_demo()
+
+
+# === SECURITY FUNCTIONS ===
+def scan_input_for_threats(text: str) -> Tuple[bool, List]:
+    """
+    Scan input text for security threats
+    Returns: (is_safe, list_of_triggers)
+    """
+    if not SECURITY_AVAILABLE:
+        return True, []
+    
+    security = SPRk3Security()
+    is_safe, triggers = security.check_input(text)
+    
+    if not is_safe:
+        print(f"{Colors.YELLOW}⚠️ Security Warning: Detected {len(triggers)} trigger(s){Colors.GREEN}")
+        for trigger in triggers:
+            print(f"   - {trigger.trigger_type.value}: {trigger.confidence:.0%} confidence")
+    
+    return is_safe, triggers
+
+
+def sanitize_input(text: str) -> str:
+    """
+    Remove security threats from input
+    """
+    if not SECURITY_AVAILABLE:
+        return text
+    
+    security = SPRk3Security()
+    clean = security.sanitize_input(text)
+    
+    if clean != text:
+        print(f"{Colors.ORANGE}🧹 Input sanitized - removed threats{Colors.GREEN}")
+    
+    return clean
+
+
+def scan_code_for_backdoors(code: str) -> Tuple[bool, List]:
+    """
+    Scan code for potential backdoors
+    Returns: (is_safe, list_of_threats)
+    """
+    if not SECURITY_AVAILABLE:
+        return True, []
+    
+    security = SPRk3Security()
+    return security.scan_code(code)

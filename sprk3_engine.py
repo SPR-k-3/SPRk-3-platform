@@ -538,3 +538,51 @@ if __name__ == "__main__":
         with open(output_file, 'w') as f:
             json.dump(report, f, indent=2, default=str)
         print(f"\n📄 Detailed report exported to: {output_file}")
+
+
+# === AGENTLAND DEFENSE INTEGRATION ===
+try:
+    from sprk3_security import SPRk3Security
+    
+    class SecureSPRk3Analyzer:
+        """
+        SPR{K}3 analyzer with security checks
+        """
+        def __init__(self):
+            self.security = SPRk3Security()
+        
+        def secure_analyze(self, code_input: str) -> dict:
+            """
+            Analyze code with security pre-check
+            """
+            # Scan for threats first
+            is_safe, triggers = self.security.scan_code(code_input)
+            
+            if not is_safe:
+                return {
+                    'status': 'blocked',
+                    'reason': 'security',
+                    'threats_detected': len(triggers),
+                    'message': '🚨 Code contains potential threats - analysis blocked',
+                    'triggers': [
+                        {
+                            'type': t.trigger_type.value,
+                            'confidence': t.confidence,
+                            'location': t.location
+                        }
+                        for t in triggers
+                    ]
+                }
+            
+            # If safe, proceed with analysis
+            return {
+                'status': 'safe',
+                'threats_detected': 0,
+                'message': '✅ Code is clean - safe to analyze'
+            }
+    
+    print("✅ SPR{K}3 Security Analyzer available")
+    
+except ImportError:
+    print("⚠️ Security module not available")
+    SecureSPRk3Analyzer = None
