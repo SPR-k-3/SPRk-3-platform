@@ -1,0 +1,33 @@
+{
+  "arbitrary_code_execution": {
+    "numpy": [
+      "numpy.core._ufunc_reconstruct",
+      "numpy.core.fromnumeric._wrapfunc",
+      "numpy.distutils.cpuinfo.command_by_line",
+      "numpy.distutils.exec_command._exec_command",
+      "numpy.f2py.capi_maps.getinit",
+      "numpy.f2py.crackfortran._eval_scalar",
+      "numpy.testing._private.utils.measure"
+    ],
+    "sympy": [
+      "sympy.lazy_function",
+      "sympy.sympify",
+      "sympy.parsing.sympy_parser.eval_expr",
+      "sympy.utilities.lambdify.lambdify"
+    ],
+    "builtin": [
+      "cProfile.run",
+      "cgitb.lookup",
+      "code.InteractiveInterpreter.runcode",
+      "doctest.debug_script",
+      "logging.config._resolve",
+      "pydoc.pipepager",
+      "trace.Trace.run"
+    ]
+  },
+  "bypass_rates": {
+    "cgitb.lookup": 100,
+    "logging.config._resolve": 100,
+    "default": 89
+  }
+}

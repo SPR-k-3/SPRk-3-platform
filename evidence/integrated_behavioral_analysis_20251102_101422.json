@@ -1,0 +1,14 @@
+{
+  "analysis_date": "2025-11-02T10:14:22.859421",
+  "temporal_analysis": {
+    "total_contributors": 0,
+    "anomalies": 0,
+    "high_risk_contributors": 0
+  },
+  "complexity_analysis": {
+    "total_functions": 1769,
+    "technical_debt": 0.3561334087054834,
+    "hotspots": 10
+  },
+  "integrated_risk_score": 0.0014245336348219335
+}

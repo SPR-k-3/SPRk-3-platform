@@ -13,22 +13,23 @@ venv/
 .idea/
 *.swp
 *.swo
-
-# OS
 .DS_Store
-Thumbs.db
 
-# Project
-*.log
-*.db
-.coverage
-htmlcov/
-dist/
-build/
-*.egg-info/
+# SPR{K}3 Specific
+verification/
+archive/
+*.pkl
+*.pyc
 
-# Project specific
-test_repos/
-test_face_rec/
-test_flask/
-sprk3_integrated.py
+# Evidence (too many files)
+evidence/analysis/
+evidence/certificates/aic_certificates/
+
+# Local configs
+my_bounty_targets.txt
+local_settings.py
+# Responsible Disclosure - Do Not Commit
+reports/bug_bounty/
+evidence/validation/
+evidence/scans/*SCAN*.json
+private_disclosures/

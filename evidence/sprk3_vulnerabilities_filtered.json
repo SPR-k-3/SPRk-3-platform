@@ -1,0 +1,657 @@
+{
+  "metadata": {},
+  "filter_stats": {
+    "total": 78,
+    "filtered": 44,
+    "by_reason": {
+      "Genuine vulnerability (high confidence)": 34,
+      "Test/example code": 44
+    },
+    "by_type": {},
+    "confidence_adjustments": []
+  },
+  "vulnerabilities": [
+    {
+      "type": "unsafe_exec",
+      "company": "FastAPI",
+      "repository": "tiangolo/fastapi",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_tiangolo_fastapi/docs_src/sql_databases/tutorial002_an_py310.py",
+      "line": 71,
+      "description": "Use of exec()",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_exec",
+      "company": "FastAPI",
+      "repository": "tiangolo/fastapi",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_tiangolo_fastapi/docs_src/sql_databases/tutorial002.py",
+      "line": 70,
+      "description": "Use of exec()",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_exec",
+      "company": "FastAPI",
+      "repository": "tiangolo/fastapi",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_tiangolo_fastapi/docs_src/sql_databases/tutorial001_an_py39.py",
+      "line": 54,
+      "description": "Use of exec()",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_exec",
+      "company": "FastAPI",
+      "repository": "tiangolo/fastapi",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_tiangolo_fastapi/docs_src/sql_databases/tutorial001_py310.py",
+      "line": 50,
+      "description": "Use of exec()",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_exec",
+      "company": "FastAPI",
+      "repository": "tiangolo/fastapi",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_tiangolo_fastapi/docs_src/sql_databases/tutorial001_an_py310.py",
+      "line": 54,
+      "description": "Use of exec()",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_exec",
+      "company": "FastAPI",
+      "repository": "tiangolo/fastapi",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_tiangolo_fastapi/docs_src/sql_databases/tutorial002_py39.py",
+      "line": 70,
+      "description": "Use of exec()",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_exec",
+      "company": "FastAPI",
+      "repository": "tiangolo/fastapi",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_tiangolo_fastapi/docs_src/sql_databases/tutorial002_an.py",
+      "line": 72,
+      "description": "Use of exec()",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_exec",
+      "company": "FastAPI",
+      "repository": "tiangolo/fastapi",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_tiangolo_fastapi/docs_src/sql_databases/tutorial002_py310.py",
+      "line": 68,
+      "description": "Use of exec()",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_exec",
+      "company": "FastAPI",
+      "repository": "tiangolo/fastapi",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_tiangolo_fastapi/docs_src/sql_databases/tutorial002_an_py39.py",
+      "line": 71,
+      "description": "Use of exec()",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_exec",
+      "company": "FastAPI",
+      "repository": "tiangolo/fastapi",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_tiangolo_fastapi/docs_src/sql_databases/tutorial001_py39.py",
+      "line": 52,
+      "description": "Use of exec()",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_exec",
+      "company": "FastAPI",
+      "repository": "tiangolo/fastapi",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_tiangolo_fastapi/docs_src/sql_databases/tutorial001_an.py",
+      "line": 55,
+      "description": "Use of exec()",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_exec",
+      "company": "FastAPI",
+      "repository": "tiangolo/fastapi",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_tiangolo_fastapi/docs_src/sql_databases/tutorial001.py",
+      "line": 52,
+      "description": "Use of exec()",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_exec",
+      "company": "Gradio",
+      "repository": "gradio-app/gradio",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_gradio-app_gradio/gradio/utils.py",
+      "line": 317,
+      "description": "Use of exec()",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_exec",
+      "company": "Gradio",
+      "repository": "gradio-app/gradio",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_gradio-app_gradio/gradio/utils.py",
+      "line": 346,
+      "description": "Use of exec()",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_exec",
+      "company": "Gradio",
+      "repository": "gradio-app/gradio",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_gradio-app_gradio/gradio/ipython_ext.py",
+      "line": 78,
+      "description": "Use of exec()",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_exec",
+      "company": "Streamlit",
+      "repository": "streamlit/streamlit",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_streamlit_streamlit/e2e_playwright/st_fragment_chat_response.py",
+      "line": 42,
+      "description": "Use of exec()",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_exec",
+      "company": "Streamlit",
+      "repository": "streamlit/streamlit",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_streamlit_streamlit/lib/streamlit/navigation/page.py",
+      "line": 303,
+      "description": "Use of exec()",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_torch_load",
+      "company": "PyTorch Lightning",
+      "repository": "Lightning-AI/lightning",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_Lightning-AI_lightning/src/lightning/fabric/fabric.py",
+      "line": 918,
+      "description": "Unsafe torch.load without weights_only=True",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_torch_load",
+      "company": "PyTorch Lightning",
+      "repository": "Lightning-AI/lightning",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_Lightning-AI_lightning/src/lightning/fabric/strategies/fsdp.py",
+      "line": 589,
+      "description": "Unsafe torch.load without weights_only=True",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_torch_load",
+      "company": "PyTorch Lightning",
+      "repository": "Lightning-AI/lightning",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_Lightning-AI_lightning/src/lightning/fabric/strategies/model_parallel.py",
+      "line": 452,
+      "description": "Unsafe torch.load without weights_only=True",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_torch_load",
+      "company": "PyTorch Lightning",
+      "repository": "Lightning-AI/lightning",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_Lightning-AI_lightning/src/lightning/fabric/strategies/xla.py",
+      "line": 269,
+      "description": "Unsafe torch.load without weights_only=True",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_torch_load",
+      "company": "PyTorch Lightning",
+      "repository": "Lightning-AI/lightning",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_Lightning-AI_lightning/src/lightning/fabric/utilities/load.py",
+      "line": 263,
+      "description": "Unsafe torch.load without weights_only=True",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_eval",
+      "company": "PyTorch Lightning",
+      "repository": "Lightning-AI/lightning",
+      "severity": "CRITICAL",
+      "confidence": 0.7,
+      "priority_score": 70.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_Lightning-AI_lightning/src/lightning/pytorch/core/hooks.py",
+      "line": 165,
+      "description": "Use of eval() with potential untrusted input",
+      "original_confidence": 0.7,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_eval",
+      "company": "PyTorch Lightning",
+      "repository": "Lightning-AI/lightning",
+      "severity": "CRITICAL",
+      "confidence": 0.7,
+      "priority_score": 70.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_Lightning-AI_lightning/src/lightning/pytorch/core/hooks.py",
+      "line": 185,
+      "description": "Use of eval() with potential untrusted input",
+      "original_confidence": 0.7,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_eval",
+      "company": "PyTorch Lightning",
+      "repository": "Lightning-AI/lightning",
+      "severity": "CRITICAL",
+      "confidence": 0.7,
+      "priority_score": 70.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_Lightning-AI_lightning/src/lightning/pytorch/core/hooks.py",
+      "line": 205,
+      "description": "Use of eval() with potential untrusted input",
+      "original_confidence": 0.7,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_eval",
+      "company": "PyTorch Lightning",
+      "repository": "Lightning-AI/lightning",
+      "severity": "CRITICAL",
+      "confidence": 0.7,
+      "priority_score": 70.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_Lightning-AI_lightning/src/lightning/pytorch/core/module.py",
+      "line": 1405,
+      "description": "Use of eval() with potential untrusted input",
+      "original_confidence": 0.7,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_eval",
+      "company": "PyTorch Lightning",
+      "repository": "Lightning-AI/lightning",
+      "severity": "CRITICAL",
+      "confidence": 0.7,
+      "priority_score": 70.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_Lightning-AI_lightning/src/lightning/pytorch/core/module.py",
+      "line": 1543,
+      "description": "Use of eval() with potential untrusted input",
+      "original_confidence": 0.7,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_eval",
+      "company": "PyTorch Lightning",
+      "repository": "Lightning-AI/lightning",
+      "severity": "CRITICAL",
+      "confidence": 0.7,
+      "priority_score": 70.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_Lightning-AI_lightning/src/lightning/pytorch/core/module.py",
+      "line": 1562,
+      "description": "Use of eval() with potential untrusted input",
+      "original_confidence": 0.7,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_eval",
+      "company": "PyTorch Lightning",
+      "repository": "Lightning-AI/lightning",
+      "severity": "CRITICAL",
+      "confidence": 0.7,
+      "priority_score": 70.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_Lightning-AI_lightning/src/lightning/pytorch/core/module.py",
+      "line": 1655,
+      "description": "Use of eval() with potential untrusted input",
+      "original_confidence": 0.7,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_torch_load",
+      "company": "PyTorch Lightning",
+      "repository": "Lightning-AI/lightning",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_Lightning-AI_lightning/src/lightning/pytorch/strategies/fsdp.py",
+      "line": 627,
+      "description": "Unsafe torch.load without weights_only=True",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_torch_load",
+      "company": "PyTorch Lightning",
+      "repository": "Lightning-AI/lightning",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_Lightning-AI_lightning/src/lightning/pytorch/strategies/xla.py",
+      "line": 242,
+      "description": "Unsafe torch.load without weights_only=True",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_torch_load",
+      "company": "PyTorch Lightning",
+      "repository": "Lightning-AI/lightning",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_Lightning-AI_lightning/src/lightning/pytorch/utilities/upgrade_checkpoint.py",
+      "line": 63,
+      "description": "Unsafe torch.load without weights_only=True",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_torch_load",
+      "company": "PyTorch Lightning",
+      "repository": "Lightning-AI/lightning",
+      "severity": "CRITICAL",
+      "confidence": 0.85,
+      "priority_score": 76.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_Lightning-AI_lightning/src/lightning/pytorch/utilities/deepspeed.py",
+      "line": 50,
+      "description": "Unsafe torch.load without weights_only=True",
+      "original_confidence": 0.85,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    },
+    {
+      "type": "unsafe_eval",
+      "company": "PyTorch Lightning",
+      "repository": "Lightning-AI/lightning",
+      "severity": "CRITICAL",
+      "confidence": 0.7,
+      "priority_score": 70.2,
+      "bounty_range": [
+        3000,
+        8000
+      ],
+      "file": "/tmp/scan_Lightning-AI_lightning/src/lightning/pytorch/serve/servable_module_validator.py",
+      "line": 153,
+      "description": "Use of eval() with potential untrusted input",
+      "original_confidence": 0.7,
+      "filter_reason": "Genuine vulnerability (high confidence)",
+      "confidence_adjustment": 1.0
+    }
+  ],
+  "summary": {
+    "total_vulnerabilities": 34,
+    "false_positives_removed": 44,
+    "total_analyzed": 78,
+    "false_positive_rate": "56.4%",
+    "estimated_bounty_potential": 0,
+    "by_severity": {
+      "CRITICAL": 34
+    },
+    "by_type": {
+      "unsafe_exec": 17,
+      "unsafe_torch_load": 9,
+      "unsafe_eval": 8
+    },
+    "by_company": {
+      "FastAPI": 12,
+      "Gradio": 3,
+      "Streamlit": 2,
+      "PyTorch Lightning": 17
+    },
+    "by_confidence": {
+      "0.8-0.9": 26,
+      "0.9-1.0": 0,
+      "<0.8": 8
+    },
+    "reasons_filtered": {
+      "Genuine vulnerability (high confidence)": 34,
+      "Test/example code": 44
+    }
+  }
+}

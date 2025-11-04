@@ -1,0 +1,113 @@
+[
+  {
+    "url": "https://huggingface.co",
+    "overall_severity": "LOW",
+    "threat_types": [],
+    "engine_verdicts": {
+      "supply_chain": "LOW",
+      "temporal": "LOW",
+      "structural": "LOW",
+      "context": "GENUINE",
+      "brainguard": "MONITORING"
+    },
+    "temporal_analysis": {
+      "pattern": "insufficient_data",
+      "frequency": 1,
+      "trend": "unknown",
+      "coordinated_attack": false
+    },
+    "structural_impact": {
+      "affected_files": 0,
+      "direct_dependents": 0,
+      "impact_level": "isolated",
+      "critical_systems": []
+    },
+    "context_verdict": {
+      "verdict": "safe",
+      "confidence": 0.95,
+      "is_whitelisted": true,
+      "is_cdn": false,
+      "false_positive_likely": false
+    },
+    "brainguard_status": {
+      "monitored": false
+    },
+    "recommendations": [],
+    "action_required": "SAFE_WITH_VALIDATION",
+    "timestamp": "2025-11-01T15:31:48.670975"
+  },
+  {
+    "url": "https://github.com/pytorch/pytorch",
+    "overall_severity": "LOW",
+    "threat_types": [],
+    "engine_verdicts": {
+      "supply_chain": "LOW",
+      "temporal": "LOW",
+      "structural": "LOW",
+      "context": "GENUINE",
+      "brainguard": "MONITORING"
+    },
+    "temporal_analysis": {
+      "pattern": "insufficient_data",
+      "frequency": 1,
+      "trend": "unknown",
+      "coordinated_attack": false
+    },
+    "structural_impact": {
+      "affected_files": 0,
+      "direct_dependents": 0,
+      "impact_level": "isolated",
+      "critical_systems": []
+    },
+    "context_verdict": {
+      "verdict": "safe",
+      "confidence": 0.95,
+      "is_whitelisted": true,
+      "is_cdn": false,
+      "false_positive_likely": false
+    },
+    "brainguard_status": {
+      "monitored": false
+    },
+    "recommendations": [],
+    "action_required": "SAFE_WITH_VALIDATION",
+    "timestamp": "2025-11-01T15:32:06.185527"
+  },
+  {
+    "url": "https://github.com/NVIDIA/NeMo",
+    "overall_severity": "LOW",
+    "threat_types": [],
+    "engine_verdicts": {
+      "supply_chain": "LOW",
+      "temporal": "LOW",
+      "structural": "LOW",
+      "context": "GENUINE",
+      "brainguard": "MONITORING"
+    },
+    "temporal_analysis": {
+      "pattern": "insufficient_data",
+      "frequency": 1,
+      "trend": "unknown",
+      "coordinated_attack": false
+    },
+    "structural_impact": {
+      "affected_files": 0,
+      "direct_dependents": 0,
+      "impact_level": "isolated",
+      "critical_systems": []
+    },
+    "context_verdict": {
+      "verdict": "safe",
+      "confidence": 0.95,
+      "is_whitelisted": true,
+      "is_cdn": false,
+      "false_positive_likely": false
+    },
+    "brainguard_status": {
+      "monitored": false
+    },
+    "recommendations": [],
+    "action_required": "SAFE_WITH_VALIDATION",
+    "timestamp": "2025-11-01T15:32:24.284192"
+  }
+]

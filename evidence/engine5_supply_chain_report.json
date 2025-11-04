@@ -1,0 +1,391 @@
+{
+  "engine": "Engine 5: Supply Chain Intelligence",
+  "version": "1.0.0",
+  "repository": "/Users/devilfish/SPRk-3-platform-",
+  "total_findings": 33,
+  "by_severity": {
+    "critical": 30,
+    "high": 3,
+    "medium": 0,
+    "low": 0
+  },
+  "risk_score": 100.0,
+  "recommendations": [
+    "SC-001: Use torch.load(..., weights_only=True) or convert to .safetensors format",
+    "SC-003: Remove custom unpickler; use safe serialization (JSON, protobuf, safetensors)",
+    "SC-007: Set trust_remote_code=False (default) and load architectures locally"
+  ],
+  "findings": [
+    {
+      "rule_id": "SC-003",
+      "rule_name": "Custom Unpickler with Code Execution",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/sprk3_enterprise_bounty_scanner.py",
+      "line_number": 87,
+      "code_snippet": "'description': 'Use of exec()',",
+      "confidence": 0.98,
+      "remediation": "Remove custom unpickler; use safe serialization (JSON, protobuf, safetensors)",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-003",
+      "rule_name": "Custom Unpickler with Code Execution",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/sprk3_enterprise_bounty_scanner.py",
+      "line_number": 80,
+      "code_snippet": "'description': 'Use of eval() with potential untrusted input',",
+      "confidence": 0.98,
+      "remediation": "Remove custom unpickler; use safe serialization (JSON, protobuf, safetensors)",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-007",
+      "rule_name": "Dynamic Model Architecture Loading",
+      "severity": "high",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/sprk3_advanced_scanner.py",
+      "line_number": 52,
+      "code_snippet": "'pattern': r'AutoTokenizer\\.from_pretrained\\([^)]*trust_remote_code=True',",
+      "confidence": 0.85,
+      "remediation": "Set trust_remote_code=False (default) and load architectures locally",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-001",
+      "rule_name": "Unsafe Pickle/Serialization Loading",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/sprk3_refined_scanner.py",
+      "line_number": 27,
+      "code_snippet": "# Real unsafe torch.load (not in comments, not with safety params)",
+      "confidence": 0.95,
+      "remediation": "Use torch.load(..., weights_only=True) or convert to .safetensors format",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-001",
+      "rule_name": "Unsafe Pickle/Serialization Loading",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/sprk3_refined_scanner.py",
+      "line_number": 41,
+      "code_snippet": "if ('pickle.load(' in line and",
+      "confidence": 0.95,
+      "remediation": "Use torch.load(..., weights_only=True) or convert to .safetensors format",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-003",
+      "rule_name": "Custom Unpickler with Code Execution",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/sprk3_refined_scanner.py",
+      "line_number": 52,
+      "code_snippet": "if (('eval(' in line or 'exec(' in line) and",
+      "confidence": 0.98,
+      "remediation": "Remove custom unpickler; use safe serialization (JSON, protobuf, safetensors)",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-003",
+      "rule_name": "Custom Unpickler with Code Execution",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/sprk3_refined_scanner.py",
+      "line_number": 52,
+      "code_snippet": "if (('eval(' in line or 'exec(' in line) and",
+      "confidence": 0.98,
+      "remediation": "Remove custom unpickler; use safe serialization (JSON, protobuf, safetensors)",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-001",
+      "rule_name": "Unsafe Pickle/Serialization Loading",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/sprk3_false_positive_filter.py",
+      "line_number": 352,
+      "code_snippet": "'code': 'state_dict = torch.load(file, weights_only=False)  # intentional',",
+      "confidence": 0.95,
+      "remediation": "Use torch.load(..., weights_only=True) or convert to .safetensors format",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-001",
+      "rule_name": "Unsafe Pickle/Serialization Loading",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/sprk3_false_positive_filter.py",
+      "line_number": 364,
+      "code_snippet": "'code': 'model = torch.load(checkpoint_path)',",
+      "confidence": 0.95,
+      "remediation": "Use torch.load(..., weights_only=True) or convert to .safetensors format",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-003",
+      "rule_name": "Custom Unpickler with Code Execution",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/sprk3_false_positive_filter.py",
+      "line_number": 229,
+      "code_snippet": "\"\"\"Check if this is an ORM method, not Python's exec()\"\"\"",
+      "confidence": 0.98,
+      "remediation": "Remove custom unpickler; use safe serialization (JSON, protobuf, safetensors)",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-003",
+      "rule_name": "Custom Unpickler with Code Execution",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/sprk3_false_positive_filter.py",
+      "line_number": 346,
+      "code_snippet": "'code': 'heroes = session.exec(select(Hero).offset(offset).limit(limit)).all()',",
+      "confidence": 0.98,
+      "remediation": "Remove custom unpickler; use safe serialization (JSON, protobuf, safetensors)",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-003",
+      "rule_name": "Custom Unpickler with Code Execution",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/sprk3_false_positive_filter.py",
+      "line_number": 358,
+      "code_snippet": "'code': 'exec(user_input)  # Never do this!',",
+      "confidence": 0.98,
+      "remediation": "Remove custom unpickler; use safe serialization (JSON, protobuf, safetensors)",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-003",
+      "rule_name": "Custom Unpickler with Code Execution",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/bounty_hunter.py",
+      "line_number": 31,
+      "code_snippet": "f\"grep -r 'pickle.load\\\\|torch.load\\\\|eval(' /tmp/{repo_name} --include='*.py' | grep -v test | wc -",
+      "confidence": 0.98,
+      "remediation": "Remove custom unpickler; use safe serialization (JSON, protobuf, safetensors)",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-003",
+      "rule_name": "Custom Unpickler with Code Execution",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/bounty_hunter.py",
+      "line_number": 40,
+      "code_snippet": "f\"grep -r 'pickle.load\\\\|torch.load\\\\|eval(' /tmp/{repo_name} --include='*.py' | grep -v test | head",
+      "confidence": 0.98,
+      "remediation": "Remove custom unpickler; use safe serialization (JSON, protobuf, safetensors)",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-003",
+      "rule_name": "Custom Unpickler with Code Execution",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/improved_bounty_hunter.py",
+      "line_number": 53,
+      "code_snippet": "'desc': 'exec() with user input'",
+      "confidence": 0.98,
+      "remediation": "Remove custom unpickler; use safe serialization (JSON, protobuf, safetensors)",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-003",
+      "rule_name": "Custom Unpickler with Code Execution",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/improved_bounty_hunter.py",
+      "line_number": 41,
+      "code_snippet": "'desc': 'eval() with user input'",
+      "confidence": 0.98,
+      "remediation": "Remove custom unpickler; use safe serialization (JSON, protobuf, safetensors)",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-003",
+      "rule_name": "Custom Unpickler with Code Execution",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/improved_bounty_hunter.py",
+      "line_number": 47,
+      "code_snippet": "'desc': 'eval() with base64 - obfuscation attempt'",
+      "confidence": 0.98,
+      "remediation": "Remove custom unpickler; use safe serialization (JSON, protobuf, safetensors)",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-001",
+      "rule_name": "Unsafe Pickle/Serialization Loading",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/fix_torch_vulnerability.py",
+      "line_number": 11,
+      "code_snippet": "if 'torch.load(model_path)' in lines[355]:",
+      "confidence": 0.95,
+      "remediation": "Use torch.load(..., weights_only=True) or convert to .safetensors format",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-001",
+      "rule_name": "Unsafe Pickle/Serialization Loading",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/fix_torch_vulnerability.py",
+      "line_number": 14,
+      "code_snippet": "'torch.load(model_path)',",
+      "confidence": 0.95,
+      "remediation": "Use torch.load(..., weights_only=True) or convert to .safetensors format",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-001",
+      "rule_name": "Unsafe Pickle/Serialization Loading",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/fix_torch_vulnerability.py",
+      "line_number": 15,
+      "code_snippet": "'torch.load(model_path, map_location=\"cpu\", weights_only=True)'",
+      "confidence": 0.95,
+      "remediation": "Use torch.load(..., weights_only=True) or convert to .safetensors format",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-003",
+      "rule_name": "Custom Unpickler with Code Execution",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/engine5_sprk3_integration.py",
+      "line_number": 26,
+      "code_snippet": "if any(x in line for x in ['exec(', 'eval(', '__reduce__']):",
+      "confidence": 0.98,
+      "remediation": "Remove custom unpickler; use safe serialization (JSON, protobuf, safetensors)",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-003",
+      "rule_name": "Custom Unpickler with Code Execution",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/engine5_sprk3_integration.py",
+      "line_number": 26,
+      "code_snippet": "if any(x in line for x in ['exec(', 'eval(', '__reduce__']):",
+      "confidence": 0.98,
+      "remediation": "Remove custom unpickler; use safe serialization (JSON, protobuf, safetensors)",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-007",
+      "rule_name": "Dynamic Model Architecture Loading",
+      "severity": "high",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/engine5_sprk3_integration.py",
+      "line_number": 22,
+      "code_snippet": "if 'trust_remote_code=True' in line:",
+      "confidence": 0.85,
+      "remediation": "Set trust_remote_code=False (default) and load architectures locally",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-007",
+      "rule_name": "Dynamic Model Architecture Loading",
+      "severity": "high",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/engine5_sprk3_integration.py",
+      "line_number": 23,
+      "code_snippet": "vulns.append(self._create_vuln('SC-007', str(py_file), line_num, line.strip(), 'high', 0.85, 'trust_",
+      "confidence": 0.85,
+      "remediation": "Set trust_remote_code=False (default) and load architectures locally",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-003",
+      "rule_name": "Custom Unpickler with Code Execution",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/test_sprk3.py",
+      "line_number": 32,
+      "code_snippet": "f.write('if user == \"magic_key\":\\n    exec(payload)')",
+      "confidence": 0.98,
+      "remediation": "Remove custom unpickler; use safe serialization (JSON, protobuf, safetensors)",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-003",
+      "rule_name": "Custom Unpickler with Code Execution",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/test_sprk3.py",
+      "line_number": 58,
+      "code_snippet": "# Use exec() which we know triggers obfuscation detection",
+      "confidence": 0.98,
+      "remediation": "Remove custom unpickler; use safe serialization (JSON, protobuf, safetensors)",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-003",
+      "rule_name": "Custom Unpickler with Code Execution",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/test_sprk3.py",
+      "line_number": 59,
+      "code_snippet": "f.write('exec(\"malicious_code\")')",
+      "confidence": 0.98,
+      "remediation": "Remove custom unpickler; use safe serialization (JSON, protobuf, safetensors)",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-003",
+      "rule_name": "Custom Unpickler with Code Execution",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/create_exploit.py",
+      "line_number": 9,
+      "code_snippet": "def __reduce__(self):",
+      "confidence": 0.98,
+      "remediation": "Remove custom unpickler; use safe serialization (JSON, protobuf, safetensors)",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-003",
+      "rule_name": "Custom Unpickler with Code Execution",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/tests/test_sprk3.py",
+      "line_number": 32,
+      "code_snippet": "f.write('if user == \"magic_key\":\\n    exec(payload)')",
+      "confidence": 0.98,
+      "remediation": "Remove custom unpickler; use safe serialization (JSON, protobuf, safetensors)",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-003",
+      "rule_name": "Custom Unpickler with Code Execution",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/tests/test_sprk3.py",
+      "line_number": 58,
+      "code_snippet": "f.write('eval(base64.b64decode(\"hidden\"))')",
+      "confidence": 0.98,
+      "remediation": "Remove custom unpickler; use safe serialization (JSON, protobuf, safetensors)",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-001",
+      "rule_name": "Unsafe Pickle/Serialization Loading",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/agentland_defense/sprk3_base_model_defender.py",
+      "line_number": 356,
+      "code_snippet": "model = torch.load(model_path, map_location=\"cpu\", weights_only=True)",
+      "confidence": 0.95,
+      "remediation": "Use torch.load(..., weights_only=True) or convert to .safetensors format",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-003",
+      "rule_name": "Custom Unpickler with Code Execution",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/examples/suspicious_code_demo.py",
+      "line_number": 25,
+      "code_snippet": "eval(base64.b64decode(\"suspicious_encoded_payload\"))",
+      "confidence": 0.98,
+      "remediation": "Remove custom unpickler; use safe serialization (JSON, protobuf, safetensors)",
+      "cve_mapping": "CVE-2025-23298"
+    },
+    {
+      "rule_id": "SC-003",
+      "rule_name": "Custom Unpickler with Code Execution",
+      "severity": "critical",
+      "file_path": "/Users/devilfish/SPRk-3-platform-/openai-python/tests/utils.py",
+      "line_number": 32,
+      "code_snippet": "return eval(str(forwardref), globalns)  # type: ignore[no-any-return]",
+      "confidence": 0.98,
+      "remediation": "Remove custom unpickler; use safe serialization (JSON, protobuf, safetensors)",
+      "cve_mapping": "CVE-2025-23298"
+    }
+  ],
+  "cves_detected": [
+    "CVE-2025-23298"
+  ],
+  "bounty_impact": {
+    "estimated_min": 181072,
+    "estimated_max": 730432,
+    "average_per_finding": 13810
+  }
+}

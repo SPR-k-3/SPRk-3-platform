@@ -1,0 +1,777 @@
+{
+  "metadata": {},
+  "filter_stats": {
+    "total": 48,
+    "filtered": 48
+  },
+  "vulnerabilities": [
+    {
+      "type": "SC-001",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.95,
+      "priority_score": 85.5,
+      "bounty_range": [
+        5700,
+        22800
+      ],
+      "file": "find_new_targets.py",
+      "line": 21,
+      "description": "Unsafe torch.load",
+      "code_snippet": "print(f\"  - Search for pickle/torch.load/eval\")"
+    },
+    {
+      "type": "SC-001",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.95,
+      "priority_score": 85.5,
+      "bounty_range": [
+        5700,
+        22800
+      ],
+      "file": "sprk3_enterprise_bounty_scanner.py",
+      "line": 59,
+      "description": "Unsafe pickle.load",
+      "code_snippet": "'description': 'Unsafe pickle.load from untrusted source',"
+    },
+    {
+      "type": "SC-003",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.98,
+      "priority_score": 88.2,
+      "bounty_range": [
+        5880,
+        23520
+      ],
+      "file": "sprk3_enterprise_bounty_scanner.py",
+      "line": 80,
+      "description": "exec/eval",
+      "code_snippet": "'description': 'Use of eval() with potential untrusted input',"
+    },
+    {
+      "type": "SC-003",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.98,
+      "priority_score": 88.2,
+      "bounty_range": [
+        5880,
+        23520
+      ],
+      "file": "sprk3_enterprise_bounty_scanner.py",
+      "line": 87,
+      "description": "exec/eval",
+      "code_snippet": "'description': 'Use of exec()',"
+    },
+    {
+      "type": "SC-006",
+      "company": "",
+      "repository": "",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "priority_score": 49.0,
+      "bounty_range": [
+        1680,
+        8400
+      ],
+      "file": "sprk3_advanced_scanner.py",
+      "line": 22,
+      "description": "load_dataset",
+      "code_snippet": "'pattern': r'load_dataset\\([^)]*\\)(?!.*verify)',"
+    },
+    {
+      "type": "SC-007",
+      "company": "",
+      "repository": "",
+      "severity": "HIGH",
+      "confidence": 0.85,
+      "priority_score": 59.5,
+      "bounty_range": [
+        2040,
+        10200
+      ],
+      "file": "sprk3_advanced_scanner.py",
+      "line": 52,
+      "description": "trust_remote_code=True",
+      "code_snippet": "'pattern': r'AutoTokenizer\\.from_pretrained\\([^)]*trust_remote_code=True',"
+    },
+    {
+      "type": "SC-001",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.95,
+      "priority_score": 85.5,
+      "bounty_range": [
+        5700,
+        22800
+      ],
+      "file": "sprk3_refined_scanner.py",
+      "line": 27,
+      "description": "Unsafe torch.load",
+      "code_snippet": "# Real unsafe torch.load (not in comments, not with safety params)"
+    },
+    {
+      "type": "SC-001",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.95,
+      "priority_score": 85.5,
+      "bounty_range": [
+        5700,
+        22800
+      ],
+      "file": "sprk3_refined_scanner.py",
+      "line": 28,
+      "description": "Unsafe torch.load",
+      "code_snippet": "if ('torch.load(' in line and"
+    },
+    {
+      "type": "SC-001",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.95,
+      "priority_score": 85.5,
+      "bounty_range": [
+        5700,
+        22800
+      ],
+      "file": "sprk3_refined_scanner.py",
+      "line": 40,
+      "description": "Unsafe pickle.load",
+      "code_snippet": "# Real pickle.load without safety"
+    },
+    {
+      "type": "SC-001",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.95,
+      "priority_score": 85.5,
+      "bounty_range": [
+        5700,
+        22800
+      ],
+      "file": "sprk3_refined_scanner.py",
+      "line": 41,
+      "description": "Unsafe pickle.load",
+      "code_snippet": "if ('pickle.load(' in line and"
+    },
+    {
+      "type": "SC-003",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.98,
+      "priority_score": 88.2,
+      "bounty_range": [
+        5880,
+        23520
+      ],
+      "file": "sprk3_refined_scanner.py",
+      "line": 52,
+      "description": "exec/eval",
+      "code_snippet": "if (('eval(' in line or 'exec(' in line) and"
+    },
+    {
+      "type": "SC-001",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.95,
+      "priority_score": 85.5,
+      "bounty_range": [
+        5700,
+        22800
+      ],
+      "file": "sprk3_false_positive_filter.py",
+      "line": 85,
+      "description": "Unsafe torch.load",
+      "code_snippet": "# torch.load with explicit unsafe parameter + comment/context"
+    },
+    {
+      "type": "SC-001",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.95,
+      "priority_score": 85.5,
+      "bounty_range": [
+        5700,
+        22800
+      ],
+      "file": "sprk3_false_positive_filter.py",
+      "line": 87,
+      "description": "Unsafe torch.load",
+      "code_snippet": "(r'torch\\.load.*#.*intentional', 'torch.load intentionally marked unsafe'),"
+    },
+    {
+      "type": "SC-001",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.95,
+      "priority_score": 85.5,
+      "bounty_range": [
+        5700,
+        22800
+      ],
+      "file": "sprk3_false_positive_filter.py",
+      "line": 88,
+      "description": "Unsafe pickle.load",
+      "code_snippet": "(r'pickle\\.load.*#.*trusted', 'pickle.load with trust comment'),"
+    },
+    {
+      "type": "SC-003",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.98,
+      "priority_score": 88.2,
+      "bounty_range": [
+        5880,
+        23520
+      ],
+      "file": "sprk3_false_positive_filter.py",
+      "line": 229,
+      "description": "exec/eval",
+      "code_snippet": "\"\"\"Check if this is an ORM method, not Python's exec()\"\"\""
+    },
+    {
+      "type": "SC-003",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.98,
+      "priority_score": 88.2,
+      "bounty_range": [
+        5880,
+        23520
+      ],
+      "file": "sprk3_false_positive_filter.py",
+      "line": 346,
+      "description": "exec/eval",
+      "code_snippet": "'code': 'heroes = session.exec(select(Hero).offset(offset).limit(limit)).all()',"
+    },
+    {
+      "type": "SC-003",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.98,
+      "priority_score": 88.2,
+      "bounty_range": [
+        5880,
+        23520
+      ],
+      "file": "sprk3_false_positive_filter.py",
+      "line": 358,
+      "description": "exec/eval",
+      "code_snippet": "'code': 'exec(user_input)  # Never do this!',"
+    },
+    {
+      "type": "SC-001",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.95,
+      "priority_score": 85.5,
+      "bounty_range": [
+        5700,
+        22800
+      ],
+      "file": "sprk3_false_positive_filter.py",
+      "line": 364,
+      "description": "Unsafe torch.load",
+      "code_snippet": "'code': 'model = torch.load(checkpoint_path)',"
+    },
+    {
+      "type": "SC-001",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.95,
+      "priority_score": 85.5,
+      "bounty_range": [
+        5700,
+        22800
+      ],
+      "file": "bounty_hunter.py",
+      "line": 31,
+      "description": "Unsafe torch.load",
+      "code_snippet": "f\"grep -r 'pickle.load\\\\|torch.load\\\\|eval(' /tmp/{repo_name} --include='*.py' | grep -v test | wc -l\","
+    },
+    {
+      "type": "SC-001",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.95,
+      "priority_score": 85.5,
+      "bounty_range": [
+        5700,
+        22800
+      ],
+      "file": "bounty_hunter.py",
+      "line": 31,
+      "description": "Unsafe pickle.load",
+      "code_snippet": "f\"grep -r 'pickle.load\\\\|torch.load\\\\|eval(' /tmp/{repo_name} --include='*.py' | grep -v test | wc -l\","
+    },
+    {
+      "type": "SC-003",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.98,
+      "priority_score": 88.2,
+      "bounty_range": [
+        5880,
+        23520
+      ],
+      "file": "bounty_hunter.py",
+      "line": 31,
+      "description": "exec/eval",
+      "code_snippet": "f\"grep -r 'pickle.load\\\\|torch.load\\\\|eval(' /tmp/{repo_name} --include='*.py' | grep -v test | wc -l\","
+    },
+    {
+      "type": "SC-001",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.95,
+      "priority_score": 85.5,
+      "bounty_range": [
+        5700,
+        22800
+      ],
+      "file": "bounty_hunter.py",
+      "line": 40,
+      "description": "Unsafe torch.load",
+      "code_snippet": "f\"grep -r 'pickle.load\\\\|torch.load\\\\|eval(' /tmp/{repo_name} --include='*.py' | grep -v test | head -3\","
+    },
+    {
+      "type": "SC-001",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.95,
+      "priority_score": 85.5,
+      "bounty_range": [
+        5700,
+        22800
+      ],
+      "file": "bounty_hunter.py",
+      "line": 40,
+      "description": "Unsafe pickle.load",
+      "code_snippet": "f\"grep -r 'pickle.load\\\\|torch.load\\\\|eval(' /tmp/{repo_name} --include='*.py' | grep -v test | head -3\","
+    },
+    {
+      "type": "SC-003",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.98,
+      "priority_score": 88.2,
+      "bounty_range": [
+        5880,
+        23520
+      ],
+      "file": "bounty_hunter.py",
+      "line": 40,
+      "description": "exec/eval",
+      "code_snippet": "f\"grep -r 'pickle.load\\\\|torch.load\\\\|eval(' /tmp/{repo_name} --include='*.py' | grep -v test | head -3\","
+    },
+    {
+      "type": "SC-001",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.95,
+      "priority_score": 85.5,
+      "bounty_range": [
+        5700,
+        22800
+      ],
+      "file": "improved_bounty_hunter.py",
+      "line": 35,
+      "description": "Unsafe torch.load",
+      "code_snippet": "'desc': 'Unsafe torch.load without map_location'"
+    },
+    {
+      "type": "SC-003",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.98,
+      "priority_score": 88.2,
+      "bounty_range": [
+        5880,
+        23520
+      ],
+      "file": "improved_bounty_hunter.py",
+      "line": 41,
+      "description": "exec/eval",
+      "code_snippet": "'desc': 'eval() with user input'"
+    },
+    {
+      "type": "SC-003",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.98,
+      "priority_score": 88.2,
+      "bounty_range": [
+        5880,
+        23520
+      ],
+      "file": "improved_bounty_hunter.py",
+      "line": 47,
+      "description": "exec/eval",
+      "code_snippet": "'desc': 'eval() with base64 - obfuscation attempt'"
+    },
+    {
+      "type": "SC-003",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.98,
+      "priority_score": 88.2,
+      "bounty_range": [
+        5880,
+        23520
+      ],
+      "file": "improved_bounty_hunter.py",
+      "line": 53,
+      "description": "exec/eval",
+      "code_snippet": "'desc': 'exec() with user input'"
+    },
+    {
+      "type": "SC-001",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.95,
+      "priority_score": 85.5,
+      "bounty_range": [
+        5700,
+        22800
+      ],
+      "file": "fix_torch_vulnerability.py",
+      "line": 2,
+      "description": "Unsafe torch.load",
+      "code_snippet": "\"\"\"Fix torch.load vulnerability in SPRK3\"\"\""
+    },
+    {
+      "type": "SC-001",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.95,
+      "priority_score": 85.5,
+      "bounty_range": [
+        5700,
+        22800
+      ],
+      "file": "fix_torch_vulnerability.py",
+      "line": 11,
+      "description": "Unsafe torch.load",
+      "code_snippet": "if 'torch.load(model_path)' in lines[355]:"
+    },
+    {
+      "type": "SC-001",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.95,
+      "priority_score": 85.5,
+      "bounty_range": [
+        5700,
+        22800
+      ],
+      "file": "fix_torch_vulnerability.py",
+      "line": 14,
+      "description": "Unsafe torch.load",
+      "code_snippet": "'torch.load(model_path)',"
+    },
+    {
+      "type": "SC-001",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.95,
+      "priority_score": 85.5,
+      "bounty_range": [
+        5700,
+        22800
+      ],
+      "file": "engine5_sprk3_integration.py",
+      "line": 19,
+      "description": "Unsafe torch.load",
+      "code_snippet": "vulns.append(self._create_vuln('SC-001', str(py_file), line_num, line.strip(), 'critical', 0.95, 'Unsafe torch.load'))"
+    },
+    {
+      "type": "SC-001",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.95,
+      "priority_score": 85.5,
+      "bounty_range": [
+        5700,
+        22800
+      ],
+      "file": "engine5_sprk3_integration.py",
+      "line": 20,
+      "description": "Unsafe pickle.load",
+      "code_snippet": "if 'pickle.load' in line:"
+    },
+    {
+      "type": "SC-001",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.95,
+      "priority_score": 85.5,
+      "bounty_range": [
+        5700,
+        22800
+      ],
+      "file": "engine5_sprk3_integration.py",
+      "line": 21,
+      "description": "Unsafe pickle.load",
+      "code_snippet": "vulns.append(self._create_vuln('SC-001', str(py_file), line_num, line.strip(), 'critical', 0.95, 'Unsafe pickle.load'))"
+    },
+    {
+      "type": "SC-007",
+      "company": "",
+      "repository": "",
+      "severity": "HIGH",
+      "confidence": 0.85,
+      "priority_score": 59.5,
+      "bounty_range": [
+        2040,
+        10200
+      ],
+      "file": "engine5_sprk3_integration.py",
+      "line": 22,
+      "description": "trust_remote_code=True",
+      "code_snippet": "if 'trust_remote_code=True' in line:"
+    },
+    {
+      "type": "SC-007",
+      "company": "",
+      "repository": "",
+      "severity": "HIGH",
+      "confidence": 0.85,
+      "priority_score": 59.5,
+      "bounty_range": [
+        2040,
+        10200
+      ],
+      "file": "engine5_sprk3_integration.py",
+      "line": 23,
+      "description": "trust_remote_code=True",
+      "code_snippet": "vulns.append(self._create_vuln('SC-007', str(py_file), line_num, line.strip(), 'high', 0.85, 'trust_remote_code=True'))"
+    },
+    {
+      "type": "SC-006",
+      "company": "",
+      "repository": "",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "priority_score": 49.0,
+      "bounty_range": [
+        1680,
+        8400
+      ],
+      "file": "engine5_sprk3_integration.py",
+      "line": 24,
+      "description": "load_dataset",
+      "code_snippet": "if 'load_dataset' in line:"
+    },
+    {
+      "type": "SC-006",
+      "company": "",
+      "repository": "",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "priority_score": 49.0,
+      "bounty_range": [
+        1680,
+        8400
+      ],
+      "file": "engine5_sprk3_integration.py",
+      "line": 25,
+      "description": "load_dataset",
+      "code_snippet": "vulns.append(self._create_vuln('SC-006', str(py_file), line_num, line.strip(), 'high', 0.70, 'load_dataset'))"
+    },
+    {
+      "type": "SC-003",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.98,
+      "priority_score": 88.2,
+      "bounty_range": [
+        5880,
+        23520
+      ],
+      "file": "engine5_sprk3_integration.py",
+      "line": 26,
+      "description": "exec/eval",
+      "code_snippet": "if any(x in line for x in ['exec(', 'eval(', '__reduce__']):"
+    },
+    {
+      "type": "SC-003",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.98,
+      "priority_score": 88.2,
+      "bounty_range": [
+        5880,
+        23520
+      ],
+      "file": "test_sprk3.py",
+      "line": 32,
+      "description": "exec/eval",
+      "code_snippet": "f.write('if user == \"magic_key\":\\n    exec(payload)')"
+    },
+    {
+      "type": "SC-003",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.98,
+      "priority_score": 88.2,
+      "bounty_range": [
+        5880,
+        23520
+      ],
+      "file": "test_sprk3.py",
+      "line": 58,
+      "description": "exec/eval",
+      "code_snippet": "# Use exec() which we know triggers obfuscation detection"
+    },
+    {
+      "type": "SC-003",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.98,
+      "priority_score": 88.2,
+      "bounty_range": [
+        5880,
+        23520
+      ],
+      "file": "test_sprk3.py",
+      "line": 59,
+      "description": "exec/eval",
+      "code_snippet": "f.write('exec(\"malicious_code\")')"
+    },
+    {
+      "type": "SC-003",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.98,
+      "priority_score": 88.2,
+      "bounty_range": [
+        5880,
+        23520
+      ],
+      "file": "create_exploit.py",
+      "line": 9,
+      "description": "exec/eval",
+      "code_snippet": "def __reduce__(self):"
+    },
+    {
+      "type": "SC-001",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.95,
+      "priority_score": 85.5,
+      "bounty_range": [
+        5700,
+        22800
+      ],
+      "file": "create_exploit.py",
+      "line": 10,
+      "description": "Unsafe torch.load",
+      "code_snippet": "# This will execute when torch.load is called"
+    },
+    {
+      "type": "SC-003",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.98,
+      "priority_score": 88.2,
+      "bounty_range": [
+        5880,
+        23520
+      ],
+      "file": "tests/test_sprk3.py",
+      "line": 32,
+      "description": "exec/eval",
+      "code_snippet": "f.write('if user == \"magic_key\":\\n    exec(payload)')"
+    },
+    {
+      "type": "SC-003",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.98,
+      "priority_score": 88.2,
+      "bounty_range": [
+        5880,
+        23520
+      ],
+      "file": "tests/test_sprk3.py",
+      "line": 58,
+      "description": "exec/eval",
+      "code_snippet": "f.write('eval(base64.b64decode(\"hidden\"))')"
+    },
+    {
+      "type": "SC-003",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.98,
+      "priority_score": 88.2,
+      "bounty_range": [
+        5880,
+        23520
+      ],
+      "file": "examples/suspicious_code_demo.py",
+      "line": 25,
+      "description": "exec/eval",
+      "code_snippet": "eval(base64.b64decode(\"suspicious_encoded_payload\"))"
+    },
+    {
+      "type": "SC-003",
+      "company": "",
+      "repository": "",
+      "severity": "CRITICAL",
+      "confidence": 0.98,
+      "priority_score": 88.2,
+      "bounty_range": [
+        5880,
+        23520
+      ],
+      "file": "openai-python/tests/utils.py",
+      "line": 32,
+      "description": "exec/eval",
+      "code_snippet": "return eval(str(forwardref), globalns)  # type: ignore[no-any-return]"
+    }
+  ]
+}

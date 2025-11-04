@@ -353,7 +353,7 @@ class BaseModelDefender:
         # Example check structure:
         """
         import torch
-        model = torch.load(model_path)
+        model = torch.load(model_path, map_location="cpu", weights_only=True)
         
         for name, param in model.named_parameters():
             # Check for extreme values
