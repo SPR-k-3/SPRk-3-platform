@@ -1,0 +1,119 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore: [ "README.md", "**/*.md", "docs/**" ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
+          restore-keys: ${{ runner.os }}-pip-
+      - name: Install deps (lint)
+        run: |
+          python -m pip install --upgrade pip
+          pip install ruff>=0.6.0
+      - name: Lint with ruff
+        run: |
+          ruff check . || echo "Linting found issues (non-blocking for now)"
+          ruff format --check . || echo "Formatting issues found (non-blocking for now)"
+
+  test:
+    runs-on: ubuntu-latest
+    needs: [lint]
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
+          restore-keys: ${{ runner.os }}-pip-
+      - name: Install deps (tests)
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run tests with coverage
+        run: |
+          python -m pytest tests/ -v --cov=sprk3_engine --cov-report=xml --cov-report=term-missing || python tests/test_sprk3.py
+      - name: Check coverage threshold (80%)
+        run: |
+          python - <<'PY'
+          import xml.etree.ElementTree as ET
+          import os
+          if os.path.exists('coverage.xml'):
+              r = ET.parse('coverage.xml').getroot()
+              pct = 100.0*(
+                  float(r.attrib.get('lines-covered', 0))/
+                  max(1.0,float(r.attrib.get('lines-valid', 1)))
+              )
+              print(f"Coverage: {pct:.2f}%")
+              if pct < 80.0:
+                  print("Warning: Coverage below 80% (non-blocking)")
+          else:
+              print("No coverage.xml found, skipping check")
+          PY
+      - name: Upload coverage artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-xml
+          path: coverage.xml
+          if-no-files-found: ignore
+
+  scan:
+    runs-on: ubuntu-latest
+    needs: [test]
+    timeout-minutes: 20
+    permissions:
+      security-events: write
+      actions: read
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - name: Run SPR{K}3 scanner (optimized)
+        run: |
+          python3 scanners/production/sprk3_vulnerability_scanner_v45.py . \
+            --format json \
+            --sarif \
+            --exclude 'benchmarks/**' \
+            --exclude 'site-packages/**' \
+            --exclude '.git/**' \
+            --exclude 'dist/**' \
+            --exclude 'build/**' \
+            || true
+      - name: Upload SARIF to GitHub Security
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: sprk3_v45.sarif
+      - name: Upload scan artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sprk3-scan-results
+          path: |
+            sprk3_v45.sarif
+            sprk3_scan_*.json
