@@ -1,0 +1,20 @@
+# SPR{K}3 AppSec Plus Policy
+# Comprehensive security scanning - most rules enabled
+name: appsec-plus
+description: Full security audit - comprehensive coverage
+
+fail_on: MEDIUM
+format: both
+sarif: true
+
+include:
+  - "**/*.py"
+  - "**/*.ipynb"
+  - "**/*.sh"
+
+exclude:
+  - "site-packages/**"
+  - "node_modules/**"
+  - "vendor/**"
+
+# All rules enabled with standard severities

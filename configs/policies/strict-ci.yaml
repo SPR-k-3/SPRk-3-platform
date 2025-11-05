@@ -1,0 +1,61 @@
+# SPR{K}3 Strict CI Policy
+# For production pipelines - fails on critical security issues only
+name: strict-ci
+description: Production CI/CD policy - minimal false positives
+
+fail_on: HIGH
+format: both
+sarif: true
+
+include:
+  - "**/*.py"
+  - "**/*.ipynb"
+
+exclude:
+  - "site-packages/**"
+  - "third_party/**"
+  - "vendor/**"
+  - "data/**"
+  - "datasets/**"
+  - "build/**"
+  - "dist/**"
+  - "examples/data/**"
+  - "test/**"
+  - "tests/**"
+
+rules:
+  critical:
+    - torch_unsafe
+    - pickle_unsafe
+    - subprocess_shell
+    - aws_credentials
+    - private_key
+  
+  high:
+    - os_system
+    - os_popen
+    - eval_usage
+    - exec_usage
+    - transformers_unsafe
+    - yaml_unsafe
+    - sql_format
+    - sql_f_string
+  
+  warn_only:
+    - assert_used
+    - weak_random
+    - random_seed_fixed
+    - md5_usage
+    - ssl_verify_false
+    - tempfile_mktemp
+
+taint_sources:
+  - request
+  - user
+  - input
+  - args
+  - argv
+  - environ
+  - getenv
+  - POST
+  - GET

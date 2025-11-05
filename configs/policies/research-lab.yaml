@@ -1,0 +1,30 @@
+# SPR{K}3 Research Lab Policy
+# For ML research - warnings for dangerous but legitimate patterns
+name: research-lab
+description: Research environment - inform but don't block
+
+fail_on: CRITICAL
+format: both
+sarif: false
+
+include:
+  - "**/*.py"
+  - "**/*.ipynb"
+
+exclude:
+  - "site-packages/**"
+  - ".venv/**"
+  - "data/**"
+
+rules:
+  critical:
+    - subprocess_shell
+    - aws_credentials
+    - private_key
+  
+  warn_only:
+    - torch_unsafe  # Research often needs flexibility
+    - pickle_unsafe  # Common in research
+    - transformers_unsafe  # trust_remote_code often needed
+    - random_seed_fixed  # Reproducibility requirement
+    - assert_used  # Common in research code
