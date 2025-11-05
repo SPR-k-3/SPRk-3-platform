@@ -1,0 +1,59 @@
+{
+  "scan_date": "2025-11-05T06:11:05.725180",
+  "vulnerabilities": [
+    {
+      "file": "/Users/devilfish/test_target/complex.py",
+      "line": 10,
+      "type": "torch_unsafe",
+      "severity": "CRITICAL",
+      "description": "Unsafe torch.load() without weights_only=True - arbitrary code execution",
+      "code": "checkpoint = torch.load('model.pth', map_location='cpu')"
+    },
+    {
+      "file": "/Users/devilfish/test_target/complex.py",
+      "line": 11,
+      "type": "torch_unsafe",
+      "severity": "CRITICAL",
+      "description": "Unsafe torch.load() without weights_only=True - arbitrary code execution",
+      "code": "model.load_state_dict(torch.load('weights.pth'))"
+    },
+    {
+      "file": "/Users/devilfish/test_target/complex.py",
+      "line": 15,
+      "type": "exec_usage",
+      "severity": "HIGH",
+      "description": "exec() usage - code injection risk",
+      "code": "exec(compile(code, '<string>', 'exec'))"
+    },
+    {
+      "file": "/Users/devilfish/test_target/vulnerable.py",
+      "line": 5,
+      "type": "torch_unsafe",
+      "severity": "CRITICAL",
+      "description": "Unsafe torch.load() without weights_only=True - arbitrary code execution",
+      "code": "model = torch.load('model.pth')"
+    },
+    {
+      "file": "/Users/devilfish/test_target/vulnerable.py",
+      "line": 9,
+      "type": "pickle_unsafe",
+      "severity": "CRITICAL",
+      "description": "Unsafe pickle.load() - arbitrary code execution risk",
+      "code": "data = pickle.load(f)"
+    },
+    {
+      "file": "/Users/devilfish/test_target/vulnerable.py",
+      "line": 13,
+      "type": "eval_usage",
+      "severity": "HIGH",
+      "description": "eval() usage - code injection risk",
+      "code": "eval(user_input)"
+    }
+  ],
+  "summary": {
+    "critical": 4,
+    "high": 2,
+    "medium": 0,
+    "total": 6
+  }
+}
